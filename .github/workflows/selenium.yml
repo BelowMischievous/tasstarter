@@ -35,7 +35,7 @@ jobs:
           CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
           
           # Fetch the latest available ChromeDriver version (without relying on LATEST_RELEASE)
-          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json" | jq -r '.versions[] | select(.version=="'"$CHROME_VERSION"'") | .downloads.chromedriver[] | select(.platform=="linux64") | .url')
+          CHROMEDRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json" | jq -r '.versions[] | select(.version=="'"136.0.7103.49"'") | .downloads.chromedriver[] | select(.platform=="linux64") | .url')
       
           if [ -z "$CHROMEDRIVER_VERSION" ]; then
             echo "Failed to find a ChromeDriver version for Chrome $CHROME_VERSION"
